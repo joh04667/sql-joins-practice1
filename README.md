@@ -21,7 +21,7 @@ Practice on adjunct tables in SQL
 ```
 
 4. Which warehouses have diet pepsi?
-```sql
+ ```sql
         SELECT warehouse.warehouse, products.description
         FROM warehouse
         JOIN warehouse_product ON warehouse.id = warehouse_product.warehouse_id
@@ -29,8 +29,9 @@ Practice on adjunct tables in SQL
         WHERE products.description IN ('diet pepsi');
 ```
 
+
 5. Get the number of orders for each customer.
-```sql
+ ```sql
         SELECT first_name, last_name, COUNT(line_items.quantity)
         FROM customers
         JOIN addresses ON customers.id = addresses.customer_id
@@ -40,24 +41,22 @@ Practice on adjunct tables in SQL
 ```
 
 6. How many customers do we have?
-```sql
+ ```sql
         SELECT COUNT(*) AS "customer count"
         FROM customers;
 ```
 
 7. How many products do we carry?
-```sql
+ ```sql
         SELECT COUNT(*) AS "product count"
         FROM products;
 ```
 
 8. What is the total available on-hand quantity of diet pepsi?
-```sql
+ ```sql
         SELECT description, SUM(warehouse_product.on_hand)
         FROM products
         JOIN warehouse_product ON products.id = warehouse_product.product_id
         WHERE description IN ('diet pepsi')
         GROUP BY description;
 ``` 
-
-there is a bug with these numbers and it is really annoying me
