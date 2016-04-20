@@ -29,7 +29,7 @@ Practice on adjunct tables in SQL
         WHERE products.description IN ('diet pepsi');
 ```
 
-5. Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
+5. Get the number of orders for each customer.
 ```sql
         SELECT first_name, last_name, COUNT(line_items.quantity)
         FROM customers
@@ -59,3 +59,5 @@ Practice on adjunct tables in SQL
         WHERE description IN ('diet pepsi')
         GROUP BY description;
 ``` 
+
+there is a bug with these numbers and it is really annoying me
